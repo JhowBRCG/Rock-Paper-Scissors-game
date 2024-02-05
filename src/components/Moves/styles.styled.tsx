@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import triangle from "@assets/imgs/bg-triangle.svg";
+import triangle from "/bg-triangle.svg";
 import { devices } from "@styles/BreakPoints";
 
 export const Moves = styled.div`
