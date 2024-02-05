@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import triangle from "/bg-triangle.svg";
 import { devices } from "@styles/BreakPoints";
 
 export const Moves = styled.div`
@@ -6,7 +7,7 @@ export const Moves = styled.div`
   position: relative;
   width: 400px;
   min-height: 400px;
-  background-image: url("/bg-triangle.svg");
+  background-image: url(${triangle});
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
