@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type ScoreContext = {
   score: number;
-  addScore: () => void;
+  updateCount: (operation: string) => void;
 };
 
 type ScoreContextProvider = {
@@ -15,8 +15,12 @@ export const ScoreContextProvider = ({ children }: ScoreContextProvider) => {
   const storedScore = Number(localStorage.getItem("score"));
   const [score, setScore] = useState<number>(0 || storedScore);
 
-  const addScore = () => {
-    setScore((prevScore) => prevScore + 1);
+  const updateCount = (operation: string) => {
+    if (operation === "add") {
+      setScore((prevScore) => prevScore + 1);
+    } else if (operation === "subtract") {
+      setScore((prevScore) => prevScore - 1);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export const ScoreContextProvider = ({ children }: ScoreContextProvider) => {
   }, [score]);
 
   return (
-    <ScoreContext.Provider value={{ score, addScore }}>
+    <ScoreContext.Provider value={{ score, updateCount }}>
       {children}
     </ScoreContext.Provider>
   );
