@@ -1,21 +1,8 @@
-import { useEffect } from "react";
-import { useScoreContext } from "contexts/Score";
-import { usePlayerContext } from "contexts/Player";
-import { useComputerContext } from "contexts/Computer";
+import { useScore } from "hooks/useScore";
 import * as S from "./styles.styled";
 
 export const Score = () => {
-  const { score, updateCount } = useScoreContext();
-  const { player } = usePlayerContext();
-  const { computer } = useComputerContext();
-
-  useEffect(() => {
-    if (player.result === "YOU WIN") {
-      updateCount("add");
-    } else if (computer.result === "YOU WIN") {
-      updateCount("subtract");
-    }
-  }, [player.result]);
+  const score = useScore();
 
   return (
     <S.Score>
