@@ -5,5 +5,9 @@ type RulesButtonProps = {
 };
 
 export const RulesButton = ({ handleModal }: RulesButtonProps) => {
-  return <S.Button onClick={handleModal}>RULES</S.Button>;
+  return (
+    <S.Button aria-label="open rules" onClick={handleModal}>
+      RULES
+    </S.Button>
+  );
 };
