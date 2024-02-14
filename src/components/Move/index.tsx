@@ -17,6 +17,7 @@ export const Move = ({ move, updateMove, gameResult }: MoveProps) => {
 
   return (
     <S.Move
+      aria-label={move}
       $move={move}
       $gameResult={gameResult}
       onClick={() => updateMove?.(move)}
