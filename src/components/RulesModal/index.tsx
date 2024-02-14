@@ -20,7 +20,7 @@ export const RulesModal = ({ isModalOpen, handleModal }: RulesModalProps) => {
     <S.Modal ref={dialogRef}>
       <S.Header>
         <h3>RULES</h3>
-        <button onClick={handleModal}>
+        <button aria-label="close rules" onClick={handleModal}>
           <img src={icon_close} alt="close icon" />
         </button>
       </S.Header>
